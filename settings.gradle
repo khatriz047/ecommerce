@@ -1,0 +1,6 @@
+rootProject.name = 'ecommerce'
+include 'demo'
+include 'core'
+rootProject.name = 'ecommerce'
+include 'core'
+
