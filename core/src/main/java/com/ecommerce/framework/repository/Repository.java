@@ -1,42 +1,60 @@
 package com.ecommerce.framework.repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.ecommerce.framework.product.Product;
+import com.ecommerce.framework.userconfig.IUser;
+import com.ecommerce.framework.userconfig.User;
+import com.ecommerce.framework.product.Product;
+
+import java.util.*;
 
 public class Repository implements IRepository {
-	Map<String, Item> items;
-	private static Repository INSTANCE;
-	private Repository() {
-		items = new HashMap<String,Item>();
-	}
-	
-	public static Repository getInstance(){
-		if(INSTANCE==null){
-			INSTANCE = new Repository();
-		}
-		return INSTANCE;
-	}
+    Map<String, IUser> users;
+    Map<String, Product> products;
 
-	public Item saveItem(Item item) throws Exception {
-		if (items.containsKey(item.getItemID()))
-			throw new Exception("Illegal Argument");
-		items.put(item.getItemID(), item);
-		return item;
-	}
-	
-	public List<Item> vewItemsByCategory(String category){
-		List<Item> list = new ArrayList<Item>();
-		for(Map.Entry<String, Item> item: items.entrySet()){
-			if(item.getValue().getCategory().equals(category)){
-				list.add(item.getValue());
-			}
-			
-		}
-		return list;
-	}
-	
-	
+    //private User user;
+    private static Repository INSTANCE;
+
+    private Repository() {
+        users = new Hashtable<>();
+        products = new HashMap<>();
+    }
+
+    public static Repository getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new Repository();
+        }
+        return INSTANCE;
+    }
+
+    public void saveUser(IUser user) throws Exception {
+        if (users.containsKey(user.getUsername())) throw new Exception("User Already Exist");
+        users.put(user.getUsername(), user);
+    }
+
+    public IUser getUserFromUserName(String username) {
+        return users.get(username);
+    }
+
+    public List<IUser> getListOfUser() {
+        List<IUser> list = new ArrayList<>();
+        for (Map.Entry<String, IUser> user : users.entrySet()) {
+            list.add(user.getValue());
+        }
+        return list;
+    }
+
+   /* public void saveProduct(Product product) throws Exception {
+        if (products.containsKey(product.getProductId())) throw new Exception("illegal Argument");
+        products.put(product.getProductId(), product);
+    }
+
+    public List<Product> getListOfProducts() {
+        List<Product> list = new ArrayList<>();
+        for (Map.Entry<String, Product> product : products.entrySet()) {
+            list.add(product.getValue());
+        }
+        return list;
+    }*/
+
 
 }
