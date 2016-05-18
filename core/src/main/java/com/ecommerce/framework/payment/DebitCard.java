@@ -8,9 +8,9 @@ import java.util.Date;
 /* Concrete Strategy Class*/
 public class DebitCard implements PaymentMethod {
 
-    private final String name;
-    private final String cardNumber;
-    private final Date expires;
+    private String name;
+    private String cardNumber;
+    private Date expires;
 
     public String getName() {
         return name;
@@ -24,6 +24,10 @@ public class DebitCard implements PaymentMethod {
         return expires;
     }
 
+    public DebitCard() {
+
+    }
+
     public DebitCard(String name, String cardNumber, Date expires) {
         super();
         this.name = name;
@@ -34,6 +38,17 @@ public class DebitCard implements PaymentMethod {
     @Override
     public void pay(double amount) {
         System.out.println("This amount " + amount + " is paid from " + name + " via debit card");
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public void setExpires(Date expires) {
+        this.expires = expires;
     }
 }
