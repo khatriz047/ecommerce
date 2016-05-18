@@ -43,4 +43,8 @@ public abstract class CatalogComponent {
 		throw new UnsupportedOperationException("Cannot print.");
 	}
 
+	public boolean hasChildren() {
+		throw new UnsupportedOperationException("Cannot return price.");
+	}
+
 }
