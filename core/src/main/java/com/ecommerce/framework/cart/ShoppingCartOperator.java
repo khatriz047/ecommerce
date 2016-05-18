@@ -8,14 +8,14 @@ import java.util.Stack;
  * invoker class
  */
 public class ShoppingCartOperator {
-    Stack<ICommand> commadStack = new Stack<ICommand>();
-    ICommand command;
+    Stack<ICommad> commadStack = new Stack<ICommad>();
+    ICommad command;
 
-      public ShoppingCartOperator(ICommand command){
+      public ShoppingCartOperator(ICommad command){
            this.command = command;
       }
 
-    public void addToCart(){
+    public void addTocart(){
        // command.setRequestParam(product);
          if (command.execute()==true) {
              commadStack.add(command);
@@ -24,7 +24,7 @@ public class ShoppingCartOperator {
     }
     public void removeFromCart(AddToCart commad,IProduct product){
          if (commad.undo()== true){
-             commadStack.add(command);
+             commadStack.add(commad);
              System.out.println("Successfully Removed from the cart");
          }
     }
