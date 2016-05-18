@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args){
         //LoginController loginController = new LoginController(loginService);
         printLine();
-        printMessage("Welcome to Online Shopping System");
+        printMessage("Welcome to Online Shopping System ");
         printLine();
 
         Scanner scanner = new Scanner(System.in);
