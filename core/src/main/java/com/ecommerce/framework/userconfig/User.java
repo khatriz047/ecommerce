@@ -8,7 +8,8 @@ public class User extends IUser {
     }
 
     /*Concrete observer*/
-    public void update(String message) {
-        System.out.println("Message received:" + message);
+    public void update(String message)
+    {
+        System.out.println("Message received by "+getName()+" " + message);
     }
 }
