@@ -45,10 +45,10 @@ public class CatalogComponentTest {
 
 		/* Print out product/catalog information */
 		mainCatalog.print();
-		for (CatalogComponent catalogComponent : mainCatalog.getChilds()) {
+		/*for (CatalogComponent catalogComponent : mainCatalog.getChilds()) {
 
 			System.out.println(catalogComponent.getPrice());
-		}
+		}*/
 
 	}
 }

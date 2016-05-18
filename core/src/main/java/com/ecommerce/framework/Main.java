@@ -13,8 +13,8 @@ public class Main  {
         ShoppingCart shoppingCart = new ShoppingCart();
         IProduct product = new Book(1,25.0);
         IProduct product2 = new Dvd(2,26.0);
-        ICommad command = new AddToCart(shoppingCart,product);
-        ICommad anotherCommand = new AddToCart(shoppingCart,product2);
+        ICommand command = new AddToCart(shoppingCart,product);
+        ICommand anotherCommand = new AddToCart(shoppingCart,product2);
         ShoppingCartOperator operator = new ShoppingCartOperator(command);
         operator.addToCart();
         ShoppingCartOperator anotherOperator = new ShoppingCartOperator(anotherCommand);
