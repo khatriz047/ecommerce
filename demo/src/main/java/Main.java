@@ -34,7 +34,8 @@ public class Main extends Ecommerce {
 
     @Override
     protected void start() {
-        LoginController loginController = new LoginController(loginService);
+        DataLoader loader = new DataLoader(repository);
+        loader.saveDefaultUsers();
 
         printLine();
         printMessage("Welcome to Online Shopping System ");
@@ -49,23 +50,14 @@ public class Main extends Ecommerce {
         String password = scanner.nextLine();
 
         User user = new User(username, password, RoleType.CUSTOMER);
-//        try {
-//            loginController.login(user);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-        printMessage(username);
-        printMessage(password);
-
-        /**
-         * Display all the products
-         * */
         try {
-            DataLoader loader = new DataLoader(repository);
+            LoginController loginController = new LoginController(loginService);
+            loginController.login(user);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        loader.loadDefaultProducts();
         System.out.println("Add Products to the Shopping Cart");
         String input="";
         Scanner scan = new Scanner(System.in);

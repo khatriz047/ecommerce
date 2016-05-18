@@ -20,8 +20,6 @@ public class DataLoader {
 
     public DataLoader(IRepository repository) {
         this.repository = repository;
-        saveDefaultUsers();
-        saveDefaultProducts();
     }
 
     public void saveDefaultUsers() {
@@ -45,7 +43,7 @@ public class DataLoader {
 
     }
 
-    public void saveDefaultProducts() {
+    public void loadDefaultProducts() {
         try {
                 /* Create primary products for male catalog */
             CatalogComponent electronic1 = new Product("PROD001", "Laptop", 765.00, 10, true);
