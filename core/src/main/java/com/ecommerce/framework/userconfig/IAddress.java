@@ -52,4 +52,13 @@ public abstract class IAddress {
 		this.zip = zip;
 	}
 
+	@Override
+	public String toString() {
+		return "IAddress{" +
+				"street='" + street + '\'' +
+				", city='" + city + '\'' +
+				", state='" + state + '\'' +
+				", zip='" + zip + '\'' +
+				'}';
+	}
 }
