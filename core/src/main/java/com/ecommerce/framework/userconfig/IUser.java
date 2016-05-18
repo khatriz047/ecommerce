@@ -14,6 +14,11 @@ public abstract class IUser{
 	/*Acts as observer method*/
 	public abstract void update(String message);
 
+	public IUser(String username, String password){
+		this.username = username;
+		this.password = password;
+	}
+
 	public IUser(String username, String password, String name, String emailAddress, IAddress billingAddress, IAddress shippingAddress) {
 		this.username = username;
 		this.password = password;
