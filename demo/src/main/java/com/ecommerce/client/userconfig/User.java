@@ -21,4 +21,8 @@ public class User extends IUser {
     public void setRoleType(RoleType roleType) {
         this.roleType = roleType;
     }
+
+    public void update(String availability){
+
+    }
 }

@@ -61,7 +61,7 @@ public class ShoppingCart extends AShoppingCart implements IShoppingCart {
         OrderPriceVisitor priceVisitor = new OrderPriceVisitor();
         double total=0.0;
         for (ShoppingCartItem shoppingCartItem : cart) {
-            System.out.println("item");
+          System.out.println("item");
           int quantity = shoppingCartItem.getQuantity();
             System.out.println("quantity = " + quantity);
           total += quantity *shoppingCartItem.getProduct().accept(priceVisitor);
