@@ -9,7 +9,7 @@ public class Repository implements IRepository {
 	Map<String, Item> items;
 	private static Repository INSTANCE;
 	private Repository() {
-		items = new HashMap<>();
+		items = new HashMap<String,Item>();
 	}
 	
 	public static Repository getInstance(){
@@ -27,7 +27,7 @@ public class Repository implements IRepository {
 	}
 	
 	public List<Item> vewItemsByCategory(String category){
-		List<Item> list = new ArrayList<>();
+		List<Item> list = new ArrayList<Item>();
 		for(Map.Entry<String, Item> item: items.entrySet()){
 			if(item.getValue().getCategory().equals(category)){
 				list.add(item.getValue());

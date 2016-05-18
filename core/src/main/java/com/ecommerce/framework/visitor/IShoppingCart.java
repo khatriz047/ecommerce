@@ -1,5 +1,6 @@
-package com.ecommerce.framework.cart;
+package com.ecommerce.framework.visitor;
 
+import com.ecommerce.framework.cart.ShoppingCartItem;
 import com.ecommerce.framework.product.Product;
 
 import java.util.List;

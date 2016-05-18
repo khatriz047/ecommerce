@@ -1,19 +1,16 @@
 package com.ecommerce.framework.cart;
 
+import com.ecommerce.framework.product.Product;
+
 /**
  * Created by Sandip on 5/17/16.
  */
 public class AddToCart implements ICommand {
 
      private IShoppingCart shoppingCart;
-     private IProduct product;
+     private Product product;
 
-
-     //public void setRequestParam(IProduct product){
-      //   this.product = product;
-     //}
-
-    public AddToCart(IShoppingCart shoppingCart, IProduct product){
+    public AddToCart(IShoppingCart shoppingCart, Product product){
         this.shoppingCart = shoppingCart;
         this.product = product;
     }

@@ -1,6 +1,6 @@
 package com.ecommerce.framework.cart;
 
-import com.ecommerce.framework.calculator.OrderPriceVisitor;
+import com.ecommerce.framework.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +14,12 @@ public class ShoppingCart extends AShoppingCart implements IShoppingCart {
     private int noOfItems;
 
     public ShoppingCart() {
-        cart = new ArrayList<>();
+        cart = new ArrayList<ShoppingCartItem>();
         noOfItems = 0;
     }
 
     @Override
-    public void removeItem(IProduct product) {
+    public void removeItem(Product product) {
         for (ShoppingCartItem cartItem : cart) {
             if (cartItem.hasProduct(product)) {
                 cart.remove(cartItem);
@@ -29,7 +29,7 @@ public class ShoppingCart extends AShoppingCart implements IShoppingCart {
     }
 
     @Override
-    public void addItem(IProduct product) {
+    public void addItem(Product product) {
         boolean isNewItem = true;
         for (ShoppingCartItem cartItem : cart) {
             if (cartItem.hasProduct(product)) {
@@ -58,13 +58,12 @@ public class ShoppingCart extends AShoppingCart implements IShoppingCart {
 
     @Override
     public double calculateTotal() {
-        OrderPriceVisitor priceVisitor = new OrderPriceVisitor();
         double total=0.0;
         for (ShoppingCartItem shoppingCartItem : cart) {
           System.out.println("item");
           int quantity = shoppingCartItem.getQuantity();
-            System.out.println("quantity = " + quantity);
-          total += quantity *shoppingCartItem.getProduct().accept(priceVisitor);
+          System.out.println("quantity = " + quantity);
+          total += quantity *shoppingCartItem.getProduct().getPrice();
         }
         System.out.println("total = " + total);
         return total;

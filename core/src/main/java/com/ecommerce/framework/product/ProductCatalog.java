@@ -7,7 +7,7 @@ import java.util.List;
  * @author Chandra Prakash Panday
  */
 public class ProductCatalog extends CatalogComponent {
-    private List<CatalogComponent> products = new ArrayList<>();
+    private List<CatalogComponent> products = new ArrayList<CatalogComponent>();
     private String name;
     private boolean hasChildren;
 
