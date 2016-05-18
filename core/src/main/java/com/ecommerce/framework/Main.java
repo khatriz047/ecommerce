@@ -2,6 +2,9 @@ package com.ecommerce.framework;
 
 import com.ecommerce.framework.cart.*;
 import com.ecommerce.framework.product.Product;
+import com.ecommerce.framework.userconfig.IAddress;
+import com.ecommerce.framework.userconfig.IUser;
+import com.ecommerce.framework.userconfig.User;
 
 /**
  * Created by Sandip on 5/17/16.
@@ -9,7 +12,9 @@ import com.ecommerce.framework.product.Product;
 public class Main  {
 
     public static void main(String[] args) {
-        ShoppingCart shoppingCart = new ShoppingCart();
+
+
+        ShoppingCart shoppingCart = new ShoppingCart(null);
         Product product = new Product("1",  "book",  10,  5,  true);
         Product product2 = new Product("3",  "shoe",  20,  5,  true);
 
@@ -21,5 +26,7 @@ public class Main  {
         anotherOperator.addToCart();
         anotherOperator.addToCart();
         shoppingCart.calculateTotal();
+        Order order =shoppingCart.createOrder();
+        System.out.println( order);
     }
 }

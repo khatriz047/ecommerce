@@ -59,5 +59,8 @@ public class Product extends CatalogComponent {
 		return "Product [productId=" + productId + ", name=" + name + ", price=" + price + ", quantity=" + quantity
 				+ ", activeFlag=" + activeFlag + "]";
 	}
+	public void setQuantity(int quantity){
+		this.quantity = quantity;
+	}
 
 }

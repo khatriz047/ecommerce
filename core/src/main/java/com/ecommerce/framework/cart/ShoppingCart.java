@@ -1,6 +1,8 @@
 package com.ecommerce.framework.cart;
 
 import com.ecommerce.framework.product.Product;
+import com.ecommerce.framework.userconfig.IUser;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +14,11 @@ public class ShoppingCart extends AShoppingCart implements IShoppingCart {
 
 
     private int noOfItems;
+    private  Order order;
+    private IUser user;
 
-    public ShoppingCart() {
+    public ShoppingCart(IUser user) {
+        this.user = user;
         cart = new ArrayList<ShoppingCartItem>();
         noOfItems = 0;
     }
@@ -60,13 +65,24 @@ public class ShoppingCart extends AShoppingCart implements IShoppingCart {
     public double calculateTotal() {
         double total=0.0;
         for (ShoppingCartItem shoppingCartItem : cart) {
-          System.out.println("item");
           int quantity = shoppingCartItem.getQuantity();
-          System.out.println("quantity = " + quantity);
           total += quantity *shoppingCartItem.getProduct().getPrice();
         }
-        System.out.println("total = " + total);
+
         return total;
+    }
+
+    public Order createOrder(){
+        double total=0.0;
+        List<Product> productList = new ArrayList<Product>();
+        for (ShoppingCartItem shoppingCartItem : cart) {
+            int quantity = shoppingCartItem.getQuantity();
+            Product product = shoppingCartItem.getProduct();
+            product.setQuantity(quantity);
+            productList.add(product);
+            total += quantity *shoppingCartItem.getProduct().getPrice();
+        }
+     return  new Order(user,total,productList);
     }
 
     @Override
@@ -74,4 +90,6 @@ public class ShoppingCart extends AShoppingCart implements IShoppingCart {
         cart.clear();
         noOfItems = 0;
     }
+
+
 }

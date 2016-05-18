@@ -47,4 +47,6 @@ public abstract class CatalogComponent {
 		throw new UnsupportedOperationException("Cannot return price.");
 	}
 
+
+
 }
