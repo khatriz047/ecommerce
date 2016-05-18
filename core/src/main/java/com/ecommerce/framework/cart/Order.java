@@ -53,4 +53,12 @@ public class Order {
 
         return  order;
     }
+
+    public IUser getUser() {
+        return user;
+    }
+
+    public void setUser(IUser user) {
+        this.user = user;
+    }
 }

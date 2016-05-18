@@ -5,10 +5,10 @@ import com.ecommerce.framework.cart.Order;
 /**
  * Created by Admin on 5/18/2016.
  */
-public class Fedex implements IShipOrder {
+public class UPS implements IShipOrder {
     @Override
     public void shipOrder(Order order) {
-        System.out.println("************ ORDER DELIVERY THROUGH FEDEX ************");
+        System.out.println("************ ORDER DELIVERY THROUGH UPS ************");
         System.out.println(order.getUser().getShippingAddress());
     }
 }
