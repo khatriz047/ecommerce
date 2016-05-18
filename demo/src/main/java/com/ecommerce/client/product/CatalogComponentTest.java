@@ -1,4 +1,6 @@
-package com.ecommerce.framework.product;
+package com.ecommerce.client.product;
+
+import com.ecommerce.framework.product.*;
 
 /**
  * @author Chandra Prakash Panday
@@ -45,10 +47,10 @@ public class CatalogComponentTest {
 
 		/* Print out product/catalog information */
 		mainCatalog.print();
-		for (CatalogComponent catalogComponent : mainCatalog.getChilds()) {
+		/*for (CatalogComponent catalogComponent : mainCatalog.getChilds()) {
 
 			System.out.println(catalogComponent.getPrice());
-		}
+		}*/
 
 	}
 }
