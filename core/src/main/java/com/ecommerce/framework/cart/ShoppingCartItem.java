@@ -24,7 +24,7 @@ public class ShoppingCartItem{
       return   (this.product.getId()==product.getId())?true:false;
     }
 
-    public int getQuantiy(){
+    public int getQuantity(){
         return  this.quantity;
     }
 

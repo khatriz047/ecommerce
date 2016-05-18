@@ -3,7 +3,7 @@ package com.ecommerce.framework.cart;
 /**
  * Created by Sandip on 5/17/16.
  */
-public class AddToCart implements ICommad {
+public class AddToCart implements ICommand {
 
      private IShoppingCart shoppingCart;
      private IProduct product;

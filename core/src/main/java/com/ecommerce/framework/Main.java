@@ -16,10 +16,10 @@ public class Main  {
         ICommad command = new AddToCart(shoppingCart,product);
         ICommad anotherCommand = new AddToCart(shoppingCart,product2);
         ShoppingCartOperator operator = new ShoppingCartOperator(command);
-        operator.addTocart();
+        operator.addToCart();
         ShoppingCartOperator anotherOperator = new ShoppingCartOperator(anotherCommand);
-        anotherOperator.addTocart();
-        anotherOperator.addTocart();
+        anotherOperator.addToCart();
+        anotherOperator.addToCart();
         shoppingCart.calculateTotal();
     }
 }

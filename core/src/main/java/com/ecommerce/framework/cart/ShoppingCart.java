@@ -46,7 +46,7 @@ public class ShoppingCart extends AShoppingCart implements IShoppingCart {
     public int getNoOfItems(){
         noOfItems=0;
         for (ShoppingCartItem cartItem : cart) {
-            noOfItems+= cartItem.getQuantiy();
+            noOfItems+= cartItem.getQuantity();
         }
         return noOfItems;
     }
@@ -62,7 +62,7 @@ public class ShoppingCart extends AShoppingCart implements IShoppingCart {
         double total=0.0;
         for (ShoppingCartItem shoppingCartItem : cart) {
             System.out.println("item");
-          int quantity = shoppingCartItem.getQuantiy();
+          int quantity = shoppingCartItem.getQuantity();
             System.out.println("quantity = " + quantity);
           total += quantity *shoppingCartItem.getProduct().accept(priceVisitor);
         }
