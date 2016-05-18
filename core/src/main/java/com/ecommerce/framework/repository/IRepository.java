@@ -14,6 +14,7 @@ public interface IRepository {
 	public IUser getUserFromUserName(String username);
 	public List<IUser> getListOfUser();
 
-	/*public void saveProduct(Product product) throws Exception;
-	public List<Product> getListOfProduct();*/
+	public void saveProduct(Product product) throws Exception;
+	 List<Product> getListOfProduct();
+	Product getProduct(String productId);
 }

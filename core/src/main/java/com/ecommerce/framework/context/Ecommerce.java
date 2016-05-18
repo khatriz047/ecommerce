@@ -9,7 +9,7 @@ import com.ecommerce.framework.userconfig.LoginService;
 /**
  * Created by Admin on 5/18/2016.
  */
-public abstract class ECommerce {
+public abstract class Ecommerce {
     protected String name = "ECommerce APP";
     protected final String VERSION = "1.0";
 
@@ -17,7 +17,7 @@ public abstract class ECommerce {
     protected ILoginService loginService;
     protected Product product;
 
-    public ECommerce() {
+    public Ecommerce() {
         System.out.println("ECommerce App: Started");
         this.repository = Repository.getInstance();
         loginService = new LoginService(repository);

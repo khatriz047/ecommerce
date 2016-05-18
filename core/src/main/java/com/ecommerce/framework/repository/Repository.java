@@ -7,7 +7,8 @@ import com.ecommerce.framework.product.Product;
 
 import java.util.*;
 
-public class Repository implements IRepository {
+public class Repository implements
+        IRepository {
     Map<String, IUser> users;
     Map<String, Product> products;
 
@@ -43,18 +44,23 @@ public class Repository implements IRepository {
         return list;
     }
 
-   /* public void saveProduct(Product product) throws Exception {
+  public void saveProduct(Product product) throws Exception {
         if (products.containsKey(product.getProductId())) throw new Exception("illegal Argument");
         products.put(product.getProductId(), product);
     }
 
-    public List<Product> getListOfProducts() {
+    public List<Product> getListOfProduct() {
         List<Product> list = new ArrayList<>();
         for (Map.Entry<String, Product> product : products.entrySet()) {
             list.add(product.getValue());
         }
         return list;
-    }*/
+    }
+
+    @Override
+    public Product getProduct(String productId) {
+        return products.get(productId);
+    }
 
 
 }
