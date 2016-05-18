@@ -14,7 +14,6 @@ public class ShoppingCart extends AShoppingCart implements IShoppingCart {
 
 
     private int noOfItems;
-    private  Order order;
     private IUser user;
 
     public ShoppingCart(IUser user) {
