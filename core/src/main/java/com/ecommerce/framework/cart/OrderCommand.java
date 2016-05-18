@@ -5,7 +5,6 @@ package com.ecommerce.framework.cart;
  */
 public class OrderCommand implements ICommand {
 
-
     @Override
     public boolean execute() {
         return false;

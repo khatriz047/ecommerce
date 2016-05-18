@@ -11,7 +11,8 @@ public abstract class IUser{
 	private IAddress billingAddress;
 	private IAddress shippingAddress;
 
-	public abstract void update(String availability);
+	/*Acts as observer method*/
+	public abstract void update(String message);
 
 	public IUser(String username, String password, String name, String emailAddress, IAddress billingAddress, IAddress shippingAddress) {
 		this.username = username;
