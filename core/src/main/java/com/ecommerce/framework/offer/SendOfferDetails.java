@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class SendOfferDetails implements SendOffer {
     private ArrayList<IUser> users = new ArrayList<IUser>();
     private String message;
-    private String offererName;
+
     public SendOfferDetails(String message) {
         super();
         this.message = message;
@@ -34,16 +34,6 @@ public class SendOfferDetails implements SendOffer {
     }
 
     @Override
-    public void setOffererName(String name) {
-        this.offererName=name;
-
-    }
-    @Override
-    public String getOffererName() {
-        return offererName;
-    }
-
-    @Override
     public void registerCustomer(IUser userObserver) {
         users.add(userObserver);
     }
@@ -54,8 +44,8 @@ public class SendOfferDetails implements SendOffer {
     }
 
     @Override
-    public void notifyCustomers(String name) {
-        System.out.println("Sending Notification by  "+name);
+    public void notifyCustomers() {
+        System.out.println("Sending Notification to customers...");
         System.out.println("------------------------------");
         for (IUser user : users) {
             user.update(message);
