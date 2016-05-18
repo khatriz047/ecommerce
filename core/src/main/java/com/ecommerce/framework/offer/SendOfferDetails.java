@@ -45,9 +45,12 @@ public class SendOfferDetails implements SendOffer {
 
     @Override
     public void notifyCustomers() {
-        System.out.println("Sending Notification");
+        System.out.println("Sending Notification to customers...");
+        System.out.println("------------------------------");
         for (IUser user : users) {
             user.update(message);
         }
+        System.out.println("------------------------------");
+
     }
 }
