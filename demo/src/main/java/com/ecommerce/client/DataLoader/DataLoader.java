@@ -43,7 +43,8 @@ public class DataLoader {
         CatalogComponent malesTShirtProduct = new Product("PROD004", "M: T Shirt 38", 45.00, 10, true);
         maleCatalog.add(malesJeanProduct);
         maleCatalog.add(malesTShirtProduct);
-
+        repository.saveProduct(new Product("PROD003", "M: Jeans 32", 65.00, 10, true));
+        repository.saveProduct(new Product("PROD004", "M: T Shirt 38", 45.00, 10, true));
 
 		/* Create a composite product catalog and add female products to it */
         CatalogComponent femaleCatalog = new ProductCatalog("Female Products");
@@ -51,6 +52,8 @@ public class DataLoader {
         CatalogComponent fTShirts = new MyProduct("PROD006", "F: T Shirt 38", 45.00, 10, true, 0.05);
         femaleCatalog.add(fJeans);
         femaleCatalog.add(fTShirts);
+        repository.saveProduct(new Product("PROD005", "F: Jeans 32", 65.00, 10, true));
+        repository.saveProduct(new MyProduct("PROD006", "F: T Shirt 38", 45.00, 10, true, 0.05));
 
 		/* Create a composite product catalog and add kid products to it */
         CatalogComponent kidCatalog = new ProductCatalog("Kids Products");
@@ -59,6 +62,9 @@ public class DataLoader {
         CatalogComponent kidPlayBalls = new Product("PROD009", "Balls", 20.00, 10, true);
         kidCatalog.add(kidShorts);
         kidCatalog.add(kidPlayGears);
+        repository.saveProduct(new Product("PROD007", "Return Gift", 23.00, 10, true));
+        repository.saveProduct(new Product("PROD008", "Summer Play Gear", 65.00, 10, true));
+        repository.saveProduct(new Product("PROD009", "Balls", 20.00, 10, true));
 
 		/*
 		 * Create primary catalog and add primary products and new catalogs to
