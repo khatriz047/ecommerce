@@ -1,4 +1,6 @@
-package com.ecommerce.framework.product;
+package com.ecommerce.client.product;
+
+import com.ecommerce.framework.product.Product;
 
 /**
  * @author Chandra Prakash Panday

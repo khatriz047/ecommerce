@@ -44,6 +44,11 @@ public class Product extends CatalogComponent {
 	}
 
 	@Override
+	public boolean hasChildren() {
+		return false;
+	}
+
+	@Override
 	public void print() {
 		System.out.println("Product [productId=" + productId + ", name=" + name + ", price=" + price + ", quantity="
 				+ quantity + ", activeFlag=" + activeFlag + "]");
