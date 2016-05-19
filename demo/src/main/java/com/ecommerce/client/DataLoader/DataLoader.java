@@ -1,9 +1,8 @@
 package com.ecommerce.client.dataloader;
 
-import com.ecommerce.client.offer.AddressImpl;
-import com.ecommerce.client.product.MyProduct;
-import com.ecommerce.client.userconfig.RoleType;
-import com.ecommerce.client.userconfig.User;
+import com.ecommerce.client.sample.Address;
+import com.ecommerce.client.sample.RoleType;
+import com.ecommerce.client.sample.User;
 import com.ecommerce.framework.product.CatalogComponent;
 import com.ecommerce.framework.product.Product;
 import com.ecommerce.framework.product.ProductCatalog;
@@ -24,14 +23,14 @@ public class DataLoader {
 
     public void saveDefaultUsers() {
         try {
-            IAddress billingAddress = new AddressImpl("1000N 4TH Street", "Fairfield", "IA", "52557");
-            IAddress shippingAddress = new AddressImpl("1000N 4TH Street MR 623", "Fairfield", "IA", "52557");
+            IAddress billingAddress = new Address("1000N 4TH Street", "Fairfield", "IA", "52557");
+            IAddress shippingAddress = new Address("1000N 4TH Street MR 623", "Fairfield", "IA", "52557");
             IUser user1 = new User("anup", "password", "Anup Khatri", "khatriz047@gmail.com", billingAddress, shippingAddress, RoleType.CUSTOMER);
 
-            IAddress shippingAddress2 = new AddressImpl("1000N 4TH Street MR 629", "Fairfield", "IA", "52557");
+            IAddress shippingAddress2 = new Address("1000N 4TH Street MR 629", "Fairfield", "IA", "52557");
             IUser user2 = new User("chandra", "password", "Chandra Prakash Panday", "chandra.panday.5@gmail.com", billingAddress, shippingAddress2, RoleType.CUSTOMER);
 
-            IAddress shippingAddress3 = new AddressImpl("1000N 4TH Street MR 636", "Fairfield", "IA", "52557");
+            IAddress shippingAddress3 = new Address("1000N 4TH Street MR 636", "Fairfield", "IA", "52557");
             IUser user3 = new User("admin", "admin", "Meweal", "meweal@gmail.com", billingAddress, shippingAddress, RoleType.ADMIN);
 
             repository.saveUser(user1);
@@ -63,11 +62,11 @@ public class DataLoader {
 		/* Create a composite product catalog and add female products to it */
             CatalogComponent femaleCatalog = new ProductCatalog("Female Products");
             CatalogComponent fJeans = new Product("PROD005", "F: Jeans 32", 65.00, 10, true);
-            CatalogComponent fTShirts = new MyProduct("PROD006", "F: T Shirt 38", 45.00, 10, true, 0.05);
+            CatalogComponent fTShirts = new Product("PROD006", "F: T Shirt 38", 45.00, 10, true);
             femaleCatalog.add(fJeans);
             femaleCatalog.add(fTShirts);
             repository.saveProduct(new Product("PROD005", "F: Jeans 32", 65.00, 10, true));
-            repository.saveProduct(new MyProduct("PROD006", "F: T Shirt 38", 45.00, 10, true, 0.05));
+            repository.saveProduct(new Product("PROD006", "F: T Shirt 38", 45.00, 10, true));
 
 		/* Create a composite product catalog and add kid products to it */
             CatalogComponent kidCatalog = new ProductCatalog("Kids Products");

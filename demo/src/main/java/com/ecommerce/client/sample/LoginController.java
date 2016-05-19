@@ -1,4 +1,4 @@
-package com.ecommerce.client.userconfig;
+package com.ecommerce.client.sample;
 
 import com.ecommerce.framework.exception.AuthorizationException;
 import com.ecommerce.framework.exception.UserNotFoundException;
@@ -16,15 +16,15 @@ public class LoginController implements ILoginController {
     }
 
     @Override
-    public boolean login(IUser user)  {
-        try{
+    public boolean login(IUser user) {
+        try {
             loginService.loginUser(user);
             return true;
-        }catch(UserNotFoundException ex){
+        } catch (UserNotFoundException ex) {
             System.err.println(ex.getMessage());
-        }catch(AuthorizationException ex){
+        } catch (AuthorizationException ex) {
             System.err.println(ex.getMessage());
-        }catch (Exception ex){
+        } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
         return false;

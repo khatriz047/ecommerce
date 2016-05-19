@@ -1,4 +1,4 @@
-package com.ecommerce.client.userconfig;
+package com.ecommerce.client.sample;
 
 /**
  * Created by Admin on 5/17/2016.

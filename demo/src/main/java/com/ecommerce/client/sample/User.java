@@ -1,4 +1,4 @@
-package com.ecommerce.client.userconfig;
+package com.ecommerce.client.sample;
 
 import com.ecommerce.framework.userconfig.IAddress;
 import com.ecommerce.framework.userconfig.IUser;
