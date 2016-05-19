@@ -1,5 +1,6 @@
 package com.ecommerce.client.sample;
 
+import com.ecommerce.framework.logger.AbstractLogger;
 import com.ecommerce.framework.repository.IRepository;
 import com.ecommerce.framework.repository.Repository;
 import com.ecommerce.framework.userconfig.ILoginService;
@@ -22,6 +23,7 @@ public class LoginControllerProxy implements ILoginController {
     public boolean login(IUser user) {
         boolean isLoggedIn = loginController.login(user);
         if (isLoggedIn) {
+            logger.logMessage(AbstractLogger.INFO, "User Login Successful");
             sendToLandingPage(user);
         }
         return isLoggedIn;

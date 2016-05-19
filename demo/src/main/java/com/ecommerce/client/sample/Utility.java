@@ -1,5 +1,8 @@
 package com.ecommerce.client.sample;
 
+import com.ecommerce.framework.logger.AbstractLogger;
+import com.ecommerce.framework.logger.LoggerBuilder;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -7,6 +10,7 @@ import java.util.Date;
  * Created by Admin on 5/18/2016.
  */
 public class Utility {
+    public  static AbstractLogger logger =  LoggerBuilder.getLogger();
     public static void printLine() {
         System.out.println("=======================================");
     }

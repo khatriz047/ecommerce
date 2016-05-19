@@ -5,6 +5,7 @@ import com.ecommerce.client.sample.LoginControllerProxy;
 import com.ecommerce.client.sample.User;
 import com.ecommerce.client.sample.Utility;
 import com.ecommerce.framework.context.Ecommerce;
+import com.ecommerce.framework.logger.AbstractLogger;
 
 
 import java.util.Scanner;
@@ -23,7 +24,7 @@ public class Main extends Ecommerce {
     protected void start() {
         DataLoader loader = new DataLoader(repository);
         loader.saveDefaultUsers();
-
+        logger.logMessage(AbstractLogger.INFO, "Sample Data Loaded");
         Utility.printLine();
         Utility.printMessage("Welcome to Online Shopping System ");
         Utility.printLine();
@@ -37,6 +38,7 @@ public class Main extends Ecommerce {
         String password = scanner.nextLine();
 
         User user = new User(username, password);
+        logger.logMessage(AbstractLogger.INFO, "Authenticating User");
         LoginControllerProxy loginController = new LoginControllerProxy(loginService);
         loginController.login(user);
         System.exit(-1);
