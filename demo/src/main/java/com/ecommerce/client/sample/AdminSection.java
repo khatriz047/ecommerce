@@ -21,7 +21,7 @@ public class AdminSection {
         System.out.println("ADMIN SECTION");
         Scanner scanner = new Scanner(System.in);
         Utility.printLine();
-        Utility.printInlineMessage("Please Enter Offer");
+        Utility.printInlineMessage("Please Enter Offer:");
         String message = scanner.nextLine();
         SendOffer details = new SendOfferDetails(message);
         for (IUser customer : repository.getListOfUser()) {
