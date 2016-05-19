@@ -9,9 +9,8 @@ import com.ecommerce.framework.userconfig.IUser;
 public class User extends IUser {
     private RoleType roleType;
 
-    public User(String username, String password, RoleType roleType){
+    public User(String username, String password){
         super(username, password);
-        this.roleType = roleType;
     }
 
     public User(String username, String password, String name, String emailAddress, IAddress billingAddress, IAddress shippingAddress, RoleType roleType) {
