@@ -77,7 +77,6 @@ public class ShoppingCart extends AShoppingCart implements IShoppingCart {
         for (ShoppingCartItem shoppingCartItem : cart) {
             int quantity = shoppingCartItem.getQuantity();
             Product product = shoppingCartItem.getProduct();
-            System.out.println("product = " + product);
             product.setQuantity(quantity);
             productList.add(product);
             total += quantity *shoppingCartItem.getProduct().getPrice();

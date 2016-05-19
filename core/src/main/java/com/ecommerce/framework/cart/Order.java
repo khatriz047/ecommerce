@@ -45,11 +45,12 @@ public class Order {
     public String toString() {
    String order = "";
         for (Product product : products) {
-            order += " Item: "+product.getName()+
-                    "  Quantity: "+ product.getQuantity()+
-                    "  Rate: "+ product.getPrice()+"\n";
+            order += "-------------------------------------------------------"+"\n"+" Item: "+product.getName()+
+                    "       Quantity: "+ product.getQuantity()+
+                    "       Rate: "+ product.getPrice()+"\n";
         }
-        order +=" Total: "+totalPrice;
+        order +="-------------------------------------------------------"+"\n"+
+                " Total: "+totalPrice+"\n"+"-------------------------------------------------------";
 
         return  order;
     }

@@ -65,9 +65,9 @@ public class Main extends Ecommerce {
         if (isLoggedIn) {
             User loadedUser = (User) repository.getUserFromUserName(user.getUsername());
             if (loadedUser.getRoleType().equals(RoleType.CUSTOMER)) {
-                proceedForClientOperation(user);
+                proceedForClientOperation(loadedUser);
             } else {
-                proceedForAdminOperation(user);
+                proceedForAdminOperation(loadedUser);
             }
         }
         System.exit(-1);
@@ -93,13 +93,16 @@ public class Main extends Ecommerce {
         printLine();
         DataLoader loader = new DataLoader(repository);
         loader.loadDefaultProducts();
-
-        System.out.println("Add Products to the Shopping Cart");
+        printLine();
+        System.out.println("*****Start Shopping**********");
+        System.out.println("Adding To ShoppingCart::Enter product id");
+        System.out.println("For Checkout:: checkout");
+        printLine();
         String input = "";
         Scanner scan = new Scanner(System.in);
         ShoppingCart shoppingCart = new ShoppingCart(user);
-        while (!input.equalsIgnoreCase("proceed")) {
-            System.out.println("Add To Shopping Cart::Enter Product Id: ");
+        while (!input.equalsIgnoreCase("checkout")) {
+            System.out.println("Enter Product Id OR type checkout ");
 
             input = scan.nextLine();
             Product product = repository.getProduct(input);
@@ -109,8 +112,12 @@ public class Main extends Ecommerce {
         }
 
         Order order = shoppingCart.createOrder();
-
+        printLine();
+        System.out.println("********Checkout Order**********");
+        printLine();
+        System.out.println("Shopping Cart:");
         System.out.println(order);
+        printLine();
         System.out.println("Proceed To make Payment");
 
         PaymentContext paymentContext = new PaymentContext();
