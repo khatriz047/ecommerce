@@ -1,12 +1,20 @@
+
+
 import com.ecommerce.client.dataloader.DataLoader;
 import com.ecommerce.client.userconfig.LoginController;
 import com.ecommerce.client.userconfig.RoleType;
 import com.ecommerce.client.userconfig.User;
 import com.ecommerce.framework.cart.*;
 import com.ecommerce.framework.context.Ecommerce;
+import com.ecommerce.framework.offer.SendOffer;
+import com.ecommerce.framework.offer.SendOfferDetails;
 import com.ecommerce.framework.payment.*;
 import com.ecommerce.framework.product.Product;
+import com.ecommerce.framework.shipment.IShipOrder;
+import com.ecommerce.framework.shipment.IShippingFactory;
+import com.ecommerce.framework.shipment.ShippingFactory;
 import com.ecommerce.framework.userconfig.IUser;
+
 
 import java.util.Calendar;
 import java.util.Date;
@@ -70,6 +78,12 @@ public class Main extends Ecommerce {
         printLine();
         System.out.println("ADMIN SECTION");
         printLine();
+        SendOffer details = new SendOfferDetails("New offer!!!!!!");
+        for (IUser customer : repository.getListOfUser()) {
+            details.registerCustomer(customer);
+        }
+
+        details.notifyCustomers();
     }
 
 
@@ -79,6 +93,7 @@ public class Main extends Ecommerce {
         printLine();
         DataLoader loader = new DataLoader(repository);
         loader.loadDefaultProducts();
+
         System.out.println("Add Products to the Shopping Cart");
         String input = "";
         Scanner scan = new Scanner(System.in);
@@ -124,6 +139,14 @@ public class Main extends Ecommerce {
 
         }
         paymentContext.makePayment(order.getTotalPrice());
+        System.out.println("Enter Shipping Details");
+        System.out.println("For Fedex:: fedex");
+        System.out.println("For UPS:: ups");
+        input = scan.nextLine();
+        IShippingFactory shippingFactory = new ShippingFactory();
+        IShipOrder shipOrder = shippingFactory.getShippingAddress(input);
+        shipOrder.shipOrder(order);
+
     }
 
 

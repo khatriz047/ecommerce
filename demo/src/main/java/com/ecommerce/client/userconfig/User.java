@@ -26,7 +26,8 @@ public class User extends IUser {
         this.roleType = roleType;
     }
 
-    public void update(String availability){
-
+    @Override
+    public void update(String message){
+        System.out.println("Message received by "+getName()+" " + message);
     }
 }
