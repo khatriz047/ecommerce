@@ -1,6 +1,6 @@
-package com.ecommerce.client.DataLoader;
+package com.ecommerce.client.dataloader;
 
-import com.ecommerce.client.Offer.AddressImpl;
+import com.ecommerce.client.offer.AddressImpl;
 import com.ecommerce.client.product.MyProduct;
 import com.ecommerce.client.userconfig.RoleType;
 import com.ecommerce.client.userconfig.User;

@@ -1,4 +1,4 @@
-package com.ecommerce.client.Offer;
+package com.ecommerce.client.offer;
 
 import com.ecommerce.framework.userconfig.IAddress;
 

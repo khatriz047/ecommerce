@@ -1,4 +1,4 @@
-package com.ecommerce.client.Offer;
+package com.ecommerce.client.offer;
 
 import com.ecommerce.framework.offer.SendOffer;
 import com.ecommerce.framework.offer.SendOfferDetails;
@@ -12,7 +12,7 @@ import com.ecommerce.framework.userconfig.User;
 public class OfferTestDemo {
 
     public static void main(String[] arg) {
-        SendOffer details = new SendOfferDetails("New Offer!!!!!!");
+        SendOffer details = new SendOfferDetails("New offer!!!!!!");
         IAddress address = new AddressImpl("1000N 4TH Street", "fairfield", "IA", "52557");
 
         //create observers
